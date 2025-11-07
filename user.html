@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Font Nunito dari Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        body{
+            background-color: lightblue;
+            margin: 0;
+            padding: 0; 
+            font-size: 12px;
+            font-family: 'Nunito', sans-serif;
+            color: #0072ff;
+        }
+        .a{
+            background-color: white;
+            margin: 40px;
+            padding: 20px;
+            border-radius: 10px;
+            border:2px solid #0072ff;
+            color: black;
+        }
+        input[type="text"]{
+            border:none;
+        }
+        .b{
+            color:#0072ff;
+            font-weight: bold;
+            font-size: 30px;
+            font-family: 'Nunito', sans-serif;
+            margin:40px;
+        }
+        .menu{
+            cursor: pointer;
+            list-style:none;
+            display: flex;
+        }
+        .menu:hover{
+            background-color: #0072ff;
+            color: white;
+        }
+        .menua{
+            text-align: left;
+            color: black;
+        }
+        .menub{
+            text-align: right;
+            margin-left:auto;
+            color: black;
+        }
+        
+        .c{
+            color:black;
+            font-size: 20px;
+            font-family: 'Nunito', sans-serif;
+            margin:10px;
+            justify-content: space-between;
+            background-color: white;
+            margin: 40px;
+            border-radius: 10px;
+            border:2px solid #0072ff;
+        }
+    </style>
+</head>
+<body>
+    <div class="a">
+        <form action="#" method="post">
+            <table>
+                <tr>
+                    <td><h1><b>Profil</b></h1></td>
+                </tr>
+                <tr>
+                    <td><label for="Nama Lengkap">Nama Lengkap  </label></td>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <td><label for="Nomor HP">Nomor HP</label></td>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <td><label for="Email">Email</label></td>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <td><label for="Tanggal Lahir">Tanggal Lahir</label></td>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <td><label for="Jenis Kelamin">Jenis Kelamin</label></td>
+                    <td><input type="text"></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <div class="b">
+        Pengaturan
+    </div>
+    <div class="c"><a href="GantiKataSandi.html">
+        <div class="menu">
+            <div class="menua">Ganti Kata Sandi</div>            
+            <div class="menub">></div>
+        </div>
+    </a></div>
+    <div class="c"><a href="Bahasa.html">
+        <div class="menu">
+            <div class="menua">Bahasa</div>            
+            <div class="menub">></div>
+        </div>
+    </a></div>
+    <div class="c"><a href="Negara/Wilayah.html">
+        <div class="menu">
+            <div class="menua">Negara atau Wilayah </div>            
+            <div class="menub">></div>
+        </div>
+    </a></div>
+</body>
+</html>
