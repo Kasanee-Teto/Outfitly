@@ -1,0 +1,87 @@
+body { 
+    font-family: 'Nunito', sans-serif; 
+    margin: 0; 
+    background: #f8f9fa; 
+    color: #333; 
+}
+
+header { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; background: white; 
+    padding: 15px 10%; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05); 
+}
+
+.logo { 
+    color: #0072ff; 
+    font-weight: bold; }
+
+.nav-links { 
+    display: flex; 
+    gap: 20px; 
+}
+
+.nav-links a { 
+    text-decoration: none; 
+    color: #333; 
+}
+
+.nav-links a.active, .nav-links a:hover { color: #0072ff; }
+
+.contact { 
+    padding: 40px 10%; 
+    text-align: center; 
+}
+
+.flex-row { 
+    display: flex; 
+    justify-content: center; 
+    flex-wrap: wrap; gap: 40px; 
+    margin-top: 30px; 
+}
+
+form { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 10px;
+    width: 250px; 
+}
+
+input, textarea { 
+    padding: 10px; 
+    border: 1px solid #ccc;
+     border-radius: 5px; 
+    }
+
+button { 
+    background: #0072ff; 
+    color: white; 
+    border: none;
+    padding: 10px; 
+    border-radius: 5px; 
+    cursor: pointer; 
+}
+
+button:hover { background: #e64a19; }
+
+.info { 
+    text-align: left; 
+    max-width: 250px; 
+}
+
+footer { 
+    text-align: center; 
+    background: #1a1a1a; 
+    color: #aaa; 
+    padding: 15px; 
+}
+
+
+#loginButton {
+  background-color: #0072ff;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  text-decoration: none;
+}
