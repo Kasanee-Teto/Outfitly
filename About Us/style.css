@@ -1,70 +1,83 @@
+/* About — plain HTML/CSS, responsive and brand-aligned */
 
-body { 
-    font-family: 'Nunito', sans-serif; 
-    margin: 0; 
-    background: #f8f9fa; 
-    color: #333; 
+:root{
+  --brand: #0072ff;
+  --bg: #f8f9fa;
+  --muted: #6b6b6b;
+  --card: #fff;
+  --max-width: 1200px;
+  --container-pad: 5%;
+  --radius: 12px;
 }
 
-header { display: flex; 
-    justify-content: space-between; 
-    align-items: center; 
-    background: white; 
-    padding: 15px 10%; 
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05); 
-}
+*{ box-sizing: border-box; }
+body{ margin:0; font-family:'Nunito',sans-serif; background:var(--bg); color:#222; }
 
-.logo { 
-    color: #0072ff; 
-    font-weight: bold; 
-}
+.container{ max-width: var(--max-width); margin:0 auto; padding:0 var(--container-pad); }
 
-.nav-links { 
-    display: flex; 
-    gap: 20px; 
-}
+header{ background: var(--card); position: sticky; top:0; z-index:20; box-shadow: 0 2px 6px rgba(0,0,0,0.05); }
+.header-inner{ display:flex; align-items:center; justify-content:space-between; padding:14px 0; }
+.logo{ color: var(--brand); font-weight:700; font-size:1.15rem; }
 
-.nav-links a { 
-    text-decoration: none; 
-    color: #333; 
-}
+/* Nav toggle (CSS-only) */
+.nav-toggle-input{ display: none; }
+.nav-toggle{ display: none; cursor: pointer; font-size:1.25rem; padding: 6px 10px; border-radius:8px; }
+.nav-links{ display:flex; gap:20px; align-items:center; }
+.nav-links a{ text-decoration:none; color:#333; }
+.nav-links a.active, .nav-links a:hover{ color: var(--brand); }
 
-.nav-links a.active, .nav-links a:hover { color: #0072ff; }
-
-.about { 
-    padding: 40px 10%; 
-    text-align: 
-    center; }
-
-.team { 
-    display: flex; 
-    justify-content: center; 
-    flex-wrap: wrap; gap: 30px; 
-    margin-top: 30px; 
-}
-
-.member { 
-    flex: 1 1 150px; 
-    max-width: 200px; 
-}
-
-.member img { 
-    border-radius: 50%; 
-    margin-bottom: 10px; 
-}
-
-footer { 
-    text-align: center; 
-    background: #1a1a1a; 
-    color: #aaa; 
-    padding: 15px; 
-}
-
-
-#loginButton {
-  background-color: #0072ff;
+#loginButton{
+  background-color: var(--brand);
   color: white;
   padding: 8px 16px;
   border-radius: 20px;
   text-decoration: none;
+}
+
+/* Content */
+.about{ padding: 30px 0; }
+.intro .lead{ color: var(--muted); max-width:760px; margin:6px auto 0; text-align:center; }
+
+.mission-vision{ display:flex; gap:16px; margin-top:20px; }
+.mission-vision .card{ flex:1; background: var(--card); padding:16px; border-radius:10px; box-shadow: 0 2px 6px rgba(0,0,0,0.04); }
+
+.values{ margin-top:22px; }
+.values-grid{ display:flex; gap:12px; flex-wrap:wrap; }
+.value{ background: var(--card); padding:12px; border-radius:10px; flex:1 1 220px; box-shadow: 0 1px 4px rgba(0,0,0,0.04); }
+
+.team{ margin-top:22px; text-align:center; }
+.team .sub{ color: var(--muted); }
+.team-grid{ display:grid; grid-template-columns: repeat(4,1fr); gap:18px; margin-top:12px; }
+.member{ background: var(--card); padding:12px; border-radius:10px; box-shadow:0 1px 6px rgba(0,0,0,0.04); }
+.member img{ width:100%; height:auto; border-radius:10px; display:block; margin-bottom:8px; }
+
+.timeline{ margin-top:22px; background: var(--card); padding:16px; border-radius:10px; box-shadow:0 1px 6px rgba(0,0,0,0.04); }
+.careers-cta{ margin-top:18px; text-align:center; }
+.careers-cta .cta{ display:inline-block; margin-top:8px; background:var(--brand); color:white; padding:10px 14px; border-radius:8px; text-decoration:none; }
+
+/* Footer */
+footer {
+  text-align: center;
+  background: #1a1a1a;
+  color: #aaa;
+  padding: 15px;
+}
+
+/* Responsive */
+@media (max-width: 1100px){
+  .team-grid{ grid-template-columns: repeat(3,1fr); }
+  .mission-vision{ flex-direction: column; }
+}
+
+@media (max-width: 800px){
+  .team-grid{ grid-template-columns: repeat(2,1fr); }
+  .nav-links{ display:none; position:absolute; top:64px; right: var(--container-pad); background:var(--card); padding:12px; border-radius:10px; box-shadow: 0 6px 20px rgba(0,0,0,0.08); flex-direction: column; gap:12px; }
+  .nav-toggle{ display:inline-block; }
+  .nav-toggle-input:checked ~ .nav-links{ display:flex; }
+}
+
+@media (max-width: 480px){
+  .team-grid{ grid-template-columns: 1fr; }
+  .container{ padding-left:4%; padding-right:4%; }
+  .footer-grid{ flex-direction:column; text-align:center; padding:20px 4%; }
 }

@@ -175,7 +175,7 @@ main {
 }
 
 .product-card {
-  border-left: 3px solid #0072ff;
+  border-top: 3px solid #0072ff;
 }
 
 .box img, .card img {
