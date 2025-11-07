@@ -15,6 +15,17 @@ header {
   box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
+/* Custom Outfitly Brand Class */
+.outfitly-brand {
+  color: #0072ff;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+}
+
+.outfitly-brand:hover {
+  transform: scale(1.05);
+}
+
 .logo {
   color: #0072ff;
   font-weight: bold;
@@ -34,6 +45,8 @@ header {
 .nav-links a.active,
 .nav-links a:hover {
   color: #0072ff;
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
 }
 
 /* Search form */
@@ -57,6 +70,11 @@ header {
   border: none;
   border-radius: 0 999px 999px 0;
   cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.search-button:hover {
+  background: #0056b3;
 }
 
 /* Hero Section */
@@ -64,16 +82,41 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url('https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=1500&q=80') center/cover;
-  height: 300px;
+  background: url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1500&q=80') center/cover;
+  height: 400px;
   color: white;
   text-align: center;
+  position: relative;
+}
+
+.hero-fashion::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(0, 114, 255, 0.6), rgba(0, 86, 179, 0.6));
 }
 
 .hero-content {
   background: rgba(0,0,0,0.5);
   padding: 40px;
   border-radius: 10px;
+  position: relative;
+  z-index: 1;
+  animation: fadeInUp 1s ease;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .btn {
@@ -82,6 +125,19 @@ header {
   padding: 10px 20px;
   text-decoration: none;
   border-radius: 20px;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.btn:hover {
+  background: #0056b3;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 114, 255, 0.4);
+}
+
+.btn-outfitly {
+  background: #0072ff;
+  border: 2px solid #4da3ff;
 }
 
 main {
@@ -104,6 +160,22 @@ main {
   flex: 1 1 200px;
   max-width: 250px;
   overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+/* Custom Category and Product Card Classes */
+.category-card:hover,
+.product-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0, 114, 255, 0.3);
+}
+
+.category-card {
+  border-top: 3px solid #4da3ff;
+}
+
+.product-card {
+  border-left: 3px solid #0072ff;
 }
 
 .box img, .card img {
@@ -125,7 +197,10 @@ main {
   align-items: center;
 }
 
-.price { color: #0072ff; font-weight: 700; }
+.price { 
+  color: #0072ff; 
+  font-weight: 700; 
+}
 
 footer {
   text-align: center;
@@ -140,4 +215,41 @@ footer {
   padding: 8px 16px;
   border-radius: 20px;
   text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+#loginButton:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    padding: 15px 5%;
+  }
+  
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+  
+  .search-form {
+    width: 100%;
+  }
+  
+  .search-input {
+    flex: 1;
+  }
+  
+  .hero {
+    height: 300px;
+  }
+  
+  .flex-row {
+    flex-direction: column;
+    align-items: center;
+  }
 }
