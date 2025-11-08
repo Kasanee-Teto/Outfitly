@@ -1,4 +1,3 @@
-/* Contact — plain HTML/CSS responsive styles */
 
 :root{
   --brand: #0072ff;
@@ -60,12 +59,25 @@ header{ background: var(--card); position: sticky; top:0; z-index:20; box-shadow
 .footer-grid{ display:flex; justify-content:space-between; align-items:center; gap:8px; padding: 16px 0; background:#111; color:#aaa; margin-top: 28px; }
 .footer-links a{ color:#aaa; text-decoration:none; margin-left:12px; }
 
+@media (min-width: 768px) and (max-width: 1024px){
+  .container{
+    padding-left: 6%;
+    padding-right: 6%;
+  }
+  /* keep the 2-column contact layout but ensure the grid items have breathing room */
+  .contact-grid{ gap: 20px; grid-template-columns: 1fr 320px; }
+  .map iframe{ height: 260px; } /* slightly taller map on tablets */
+}
+
 /* Responsive */
 @media (max-width: 980px){
   .contact-grid{ grid-template-columns: 1fr; }
-  .nav-links{ display:none; position:absolute; top:64px; right: var(--container-pad); background: var(--card); padding:12px; border-radius:10px; box-shadow: 0 6px 20px rgba(0,0,0,0.08); flex-direction: column; gap:12px; }
+  .nav-links{ display:none; position:absolute; top:64px; right: var(--container-pad); background: var(--card); padding:12px; border-radius:10px; box-shadow: 0 6px 20px rgba(0,0,0,0.08); flex-direction: column; }
   .nav-toggle{ display:inline-block; }
   .nav-toggle-input:checked ~ .nav-links{ display:flex; }
+
+  .contact-form{ padding: 16px; }
+  .store-card, .map{ padding: 12px; }
 }
 
 @media (max-width: 600px){
