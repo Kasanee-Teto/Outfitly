@@ -123,11 +123,10 @@ main{
 /* Category and product titles:
    - add vertical margin so they don't stick to the image above or elements below
 */
-.box h4,
-.card-body h4 {
-  margin: 14px 0 8px; /* top and bottom margins to separate from image and price */
-  padding: 4px 0;
-  text-align: center;
+.box h4, .card-body h4 {
+    margin: 14px 0 0 0;
+    padding: 4px 0;
+    text-align: center;
 }
 
 /* product card body spacing:
