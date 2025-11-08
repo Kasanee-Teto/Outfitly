@@ -30,8 +30,8 @@ header{ background: var(--card); position: sticky; top: 0; z-index: 20; box-shad
 /* Nav toggle (CSS-only) */
 .nav-toggle-input{ display: none; }
 .nav-toggle{ display: none; cursor: pointer; font-size: 1.25rem; padding: 6px 10px; border-radius: 8px; }
-.nav-links{ display: flex; gap: 18px; align-items: center; }
-.nav-links a{ text-decoration: none; color: #333; padding: 6px 8px; border-radius: 8px; }
+.nav-links{ display:flex; gap:20px; align-items:center; }
+.nav-links a{ text-decoration: none; color: #333; }
 .nav-links a.active, .nav-links a:hover{ color: var(--brand); }
 
 #loginButton{
