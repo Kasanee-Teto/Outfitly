@@ -117,12 +117,6 @@ main{
   transition: all 0.25s ease;
 }
 
-/* Images
-   Keep images visually consistent across screen sizes:
-   - use a responsive height with clamp() so images don't get too small or too tall
-   - keep object-fit: cover so aspect stays visually pleasing
-   - provide aspect-ratio as an additional hint for modern browsers
-*/
 .box img, .card img{
   width: 100%;
   aspect-ratio: 4 / 3;
@@ -144,7 +138,7 @@ main{
    - increase bottom padding so the card's content is visually separated from other elements / footer
 */
 .card-body{
-  padding: 16px 0 0 0; /* larger bottom padding keeps content from feeling flush */
+  padding: 16px 0 0 0; 
   display:flex;
   justify-content:space-between;
   align-items:center;
@@ -157,17 +151,21 @@ main{
 /* Footer */
 footer{ text-align:center; background:#1a1a1a; color:#aaa; padding:15px; margin-top: 24px; }
 
+
 /* Responsive behavior: mobile-friendly nav + layout adjustments */
-@media (max-width: 980px){
-  /* collapse nav into toggle (same approach used on About/Contact/FAQ) */
+
+
+@media (max-width: 1024px){
+  .logo{ padding-left: 20px; }
+  /* collapse nav into toggle */
   .nav-links{ display:none; position:absolute; top:64px; right: var(--container-pad); background: var(--card); padding:12px; border-radius:10px; box-shadow: 0 6px 20px rgba(0,0,0,0.08); flex-direction: column; }
   .nav-toggle{ display:inline-block; }
   .nav-toggle-input:checked ~ .nav-links{ display:flex; }
-
+  
   /* hero and cards adjustments */
   .hero{ min-height: 260px; }
   .hero-content{ padding: 20px; }
-  .box, .card{ max-width: 100%; padding:16px; }
+  .box, .card{ padding:16px; }
   .box h4, .card-body h4{ margin: 12px 0 6px; padding: 3px 0; }
   .card-body{ padding:12px 0 14px; }
 }
