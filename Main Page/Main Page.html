@@ -13,21 +13,27 @@
 </head>
 <body>
   <header>
-    <h1 class="logo outfitly-brand">Outfitly</h1>
-    <nav class="nav-links" aria-label="Main navigation">
-      <form class="search-form" action="#" method="get" role="search" aria-label="Site search">
-        <input type="search" name="q" class="search-input" placeholder="Search fashion..." aria-label="Search">
-        <button type="submit" class="search-button">Search</button>
-      </form>
-      <a href="../Main Page/Main Page.html" class="active">Home</a>
-      <a href="../About Us/About Us.html">About Us</a>
-      <a href="../Contact Us/Contact Us.html">Contact Us</a>
-      <a href="../FAQ/FAQ.html">FAQ</a>
-      <a href="../Blog/blog.html">Blog</a>
-      <a href="login.html" id="loginButton">Login</a>
-      <a href="user.html" style="margin-left: 12px;">Profile</a>
-      <a href="../Checkout/cart.html">Cart</a>
-    </nav>
+    <div class="header-inner container">
+      <h1 class="logo">Outfitly</h1>
+
+      <input id="nav-toggle" type="checkbox" class="nav-toggle-input" />
+      <label for="nav-toggle" class="nav-toggle" aria-hidden="true">☰</label>
+
+      <nav class="nav-links" role="navigation" aria-label="Main navigation">
+        <form class="search-form" action="#" method="get" role="search" aria-label="Site search">
+          <input type="search" name="q" class="search-input" placeholder="Search fashion..." aria-label="Search">
+          <button type="submit" class="search-button">Search</button>
+        </form>
+        <a href="../Main Page/Main Page.html" class="active">Home</a>
+        <a href="../About Us/About Us.html">About Us</a>
+        <a href="../Contact Us/Contact Us.html">Contact Us</a>
+        <a href="../FAQ/FAQ.html">FAQ</a>
+        <a href="../Blog/blog.html">Blog</a>
+        <a href="../login.html" id="loginButton">Login</a>
+        <a href="../user.html" class="profile-link">Profile</a>
+        <a href="../Checkout/cart.html">Cart</a>
+      </nav>
+    </div>
   </header>
 
   <section class="hero hero-fashion">
@@ -38,7 +44,7 @@
     </div>
   </section>
 
-  <main>
+  <main class="container">
     <section class="categories">
       <h3>Featured Categories</h3>
       <div class="flex-row">

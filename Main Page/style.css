@@ -1,34 +1,63 @@
+/* CSS Variables */
+:root {
+  --brand: #0072ff;
+  --bg: #f9fafb;
+  --muted: #6b6b6b;
+  --card: #fff;
+  --max-width: 1200px;
+  --container-pad: 5%;
+  --radius: 10px;
+}
+
+* { box-sizing: border-box; }
+
 body {
   font-family: 'Nunito', sans-serif;
   margin: 0;
-  background: #f9fafb;
+  background: var(--bg);
   color: #333;
+}
+
+/* Container */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-pad);
 }
 
 /* Header */
 header {
+  background: var(--card);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.header-inner {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  background: white;
-  padding: 15px 10%;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-}
-
-/* Custom Outfitly Brand Class */
-.outfitly-brand {
-  color: #0072ff;
-  font-weight: bold;
-  transition: transform 0.3s ease;
-}
-
-.outfitly-brand:hover {
-  transform: scale(1.05);
+  justify-content: space-between;
+  padding: 14px 0;
 }
 
 .logo {
-  color: #0072ff;
-  font-weight: bold;
+  color: var(--brand);
+  font-weight: 700;
+  font-size: 1.15rem;
+}
+
+/* Nav toggle (CSS-only) */
+.nav-toggle-input {
+  display: none;
+}
+
+.nav-toggle {
+  display: none;
+  cursor: pointer;
+  font-size: 1.25rem;
+  padding: 6px 10px;
+  border-radius: 8px;
 }
 
 .nav-links {
@@ -44,9 +73,12 @@ header {
 
 .nav-links a.active,
 .nav-links a:hover {
-  color: #0072ff;
-  transform: translateY(-2px);
+  color: var(--brand);
   transition: all 0.3s ease;
+}
+
+.profile-link {
+  margin-left: 0;
 }
 
 /* Search form */
@@ -64,7 +96,7 @@ header {
 }
 
 .search-button {
-  background: #0072ff;
+  background: var(--brand);
   color: white;
   padding: 8px 12px;
   border: none;
@@ -120,7 +152,7 @@ header {
 }
 
 .btn {
-  background: #0072ff;
+  background: var(--brand);
   color: white;
   padding: 10px 20px;
   text-decoration: none;
@@ -136,12 +168,12 @@ header {
 }
 
 .btn-outfitly {
-  background: #0072ff;
+  background: var(--brand);
   border: 2px solid #4da3ff;
 }
 
 main {
-  padding: 40px 10%;
+  padding: 40px 0;
   text-align: center;
 }
 
@@ -198,7 +230,7 @@ main {
 }
 
 .price { 
-  color: #0072ff; 
+  color: var(--brand); 
   font-weight: 700; 
 }
 
@@ -210,7 +242,7 @@ footer {
 }
 
 #loginButton {
-  background-color: #0072ff;
+  background-color: var(--brand);
   color: white;
   padding: 8px 16px;
   border-radius: 20px;
@@ -225,15 +257,25 @@ footer {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  header {
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 64px;
+    right: var(--container-pad);
+    background: var(--card);
+    padding: 12px;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
     flex-direction: column;
-    padding: 15px 5%;
+    gap: 12px;
   }
   
-  .nav-links {
-    flex-direction: column;
-    width: 100%;
-    gap: 10px;
+  .nav-toggle {
+    display: inline-block;
+  }
+  
+  .nav-toggle-input:checked ~ .nav-links {
+    display: flex;
   }
   
   .search-form {
@@ -251,5 +293,103 @@ footer {
   .flex-row {
     flex-direction: column;
     align-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding-left: 4%;
+    padding-right: 4%;
+  }
+  
+  .hero {
+    height: 250px;
+  }
+  
+  .hero-content {
+    padding: 30px 20px;
+  }
+}
+/* Product Detail Page */
+.product-detail {
+  padding: 30px 0;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+  text-align: left;
+}
+
+.product-image img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.product-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-info h2 {
+  margin-top: 0;
+}
+
+.product-info .description {
+  color: var(--muted);
+  line-height: 1.6;
+  margin: 16px 0;
+}
+
+.product-options {
+  margin: 20px 0;
+}
+
+.product-options label {
+  font-weight: 600;
+  margin-right: 10px;
+}
+
+.product-options select {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.product-features {
+  margin-top: 30px;
+}
+
+.product-features ul {
+  list-style-position: inside;
+  color: var(--muted);
+}
+
+/* Categories Page */
+.categories-page {
+  padding: 30px 0;
+  text-align: center;
+}
+
+.categories-page h2 {
+  margin-bottom: 10px;
+}
+
+.categories-page .box p {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* Responsive for Product and Categories */
+@media (max-width: 768px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
 }
