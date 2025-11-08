@@ -171,7 +171,6 @@ footer{ text-align:center; background:#1a1a1a; color:#aaa; padding:15px; margin-
 @media (max-width: 480px){
   .container{ padding-left:4%; padding-right:4%; }
   .hero-content{ padding:12px; font-size: 0.95rem; }
-  .box img, .card img{ height:120px; }
   .flex-row{ gap:12px; }
   .box, .card{ padding:12px; }
   .box h4, .card-body h4{ margin: 10px 0 6px; padding: 2px 0; }
