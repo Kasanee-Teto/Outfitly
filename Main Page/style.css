@@ -117,8 +117,19 @@ main{
   transition: all 0.25s ease;
 }
 
-/* Images */
-.box img, .card img{ width:100%; height:150px; object-fit:cover; display:block; border-radius:8px; }
+/* Images
+   Keep images visually consistent across screen sizes:
+   - use a responsive height with clamp() so images don't get too small or too tall
+   - keep object-fit: cover so aspect stays visually pleasing
+   - provide aspect-ratio as an additional hint for modern browsers
+*/
+.box img, .card img{
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+  border-radius: 8px;
+}
 
 /* Category and product titles:
    - add vertical margin so they don't stick to the image above or elements below
@@ -149,7 +160,7 @@ footer{ text-align:center; background:#1a1a1a; color:#aaa; padding:15px; margin-
 /* Responsive behavior: mobile-friendly nav + layout adjustments */
 @media (max-width: 980px){
   /* collapse nav into toggle (same approach used on About/Contact/FAQ) */
-  .nav-links{ display:none; position:absolute; top:64px; right: var(--container-pad); background: var(--card); padding:12px; border-radius:10px; box-shadow: 0 6px 20px rgba(0,0,0,0.08); flex-direction:column; width:calc(100% - (var(--container-pad) * 2)); max-width:320px; }
+  .nav-links{ display:none; position:absolute; top:64px; right: var(--container-pad); background: var(--card); padding:12px; border-radius:10px; box-shadow: 0 6px 20px rgba(0,0,0,0.08); flex-direction: column; }
   .nav-toggle{ display:inline-block; }
   .nav-toggle-input:checked ~ .nav-links{ display:flex; }
 
