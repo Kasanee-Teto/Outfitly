@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Product Detail | Outfitly</title>
+  <link rel="stylesheet" href="../Main Page/style.css" />
+</head>
+<body>
+  <header>
+    <div class="header-inner container">
+      <h1 class="logo">Outfitly</h1>
+
+      <input id="nav-toggle" type="checkbox" class="nav-toggle-input" />
+      <label for="nav-toggle" class="nav-toggle" aria-hidden="true">☰</label>
+
+      <nav class="nav-links" role="navigation" aria-label="Main navigation">
+        <a href="../Main Page/Main Page.html" class="active">Home</a>
+        <a href="../About Us/About Us.html">About Us</a>
+        <a href="../Contact Us/Contact Us.html">Contact Us</a>
+        <a href="../FAQ/FAQ.html">FAQ</a>
+        <a href="../Blog/blog.html">Blog</a>
+        <a href="../login.html" id="loginButton">Login</a>
+        <a href="../user.html" class="profile-link">Profile</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="product-detail">
+      <div class="product-grid">
+        <div class="product-image">
+          <img src="../assets/images/gothic_dress.jpg" alt="Gothic Dress - Elegant black dress with lace details">
+        </div>
+        
+        <div class="product-info">
+          <h2>Gothic Dress</h2>
+          <p class="price" style="font-size: 1.5rem; margin: 16px 0;">$149</p>
+          
+          <p class="description">
+            This elegant gothic dress features intricate lace details and a flowing silhouette. 
+            Perfect for special occasions or expressing your unique dark aesthetic. 
+            Made from premium materials for comfort and durability.
+          </p>
+          
+          <div class="product-options">
+            <label for="size">Size:</label>
+            <select id="size" name="size">
+              <option>S</option>
+              <option>M</option>
+              <option selected>L</option>
+              <option>XL</option>
+            </select>
+          </div>
+          
+          <button class="btn btn-outfitly" style="margin-top: 20px; width: 100%; max-width: 300px;">
+            Add to Cart
+          </button>
+          
+          <div class="product-features">
+            <h3>Features:</h3>
+            <ul>
+              <li>Premium lace detailing</li>
+              <li>Comfortable fit</li>
+              <li>Machine washable</li>
+              <li>Available in multiple sizes</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Outfitly. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>
