@@ -22,10 +22,9 @@ body{
 .container{ max-width: var(--max-width); margin: 0 auto; padding: 0 var(--container-pad); }
 
 /* Header */
-header{ background: var(--card); position: sticky; top: 0; z-index: 20; box-shadow: 0 2px 6px rgba(0,0,0,0.05); }
-.header-inner{ display: flex; align-items: center; justify-content: space-between; padding: 14px 0; }
-
-.logo{ color: var(--brand); font-weight: 700; font-size: 1.25rem; }
+header{ background: var(--card); position: sticky; top:0; z-index:20; box-shadow: 0 2px 6px rgba(0,0,0,0.05); }
+.header-inner{ display:flex; align-items:center; justify-content:space-between; padding: 14px 0; }
+.logo{ color: var(--brand); font-weight:700; font-size:1.15rem; }
 
 /* Nav toggle (CSS-only) */
 .nav-toggle-input{ display: none; }
