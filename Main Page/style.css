@@ -1,255 +1,180 @@
+:root{
+  --brand: #0072ff;
+  --bg: #f9fafb;
+  --card: #fff;
+  --muted: #6b6b6b;
+  --max-width: 1200px;
+  --container-pad: 5%;
+  --radius: 10px;
+}
+
+/* Reset / base */
+*{ box-sizing: border-box; }
 body {
   font-family: 'Nunito', sans-serif;
   margin: 0;
-  background: #f9fafb;
+  background: var(--bg);
   color: #333;
 }
 
-/* Header */
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: white;
-  padding: 15px 10%;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+h3{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: 500;
+    line-height: 1.2;
 }
 
-/* Custom Outfitly Brand Class */
-.outfitly-brand {
-  color: #0072ff;
-  font-weight: bold;
-  transition: transform 0.3s ease;
+/* Generic center container (matches other pages) */
+.container{
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-pad);
 }
 
-.outfitly-brand:hover {
-  transform: scale(1.05);
-}
-
-.logo {
-  color: #0072ff;
-  font-weight: bold;
-}
-
-.nav-links {
-  display: flex;
-  gap: 20px;
-  align-items: center;
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: #333;
-}
-
-.nav-links a.active,
-.nav-links a:hover {
-  color: #0072ff;
-  transform: translateY(-2px);
-  transition: all 0.3s ease;
-}
-
-/* Search form */
-.search-form {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.search-input {
-  padding: 8px 12px;
-  border: 1px solid #e5e7eb;
-  border-radius: 999px 0 0 999px;
-  outline: none;
-}
-
-.search-button {
-  background: #0072ff;
-  color: white;
-  padding: 8px 12px;
-  border: none;
-  border-radius: 0 999px 999px 0;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.search-button:hover {
-  background: #0056b3;
-}
-
-/* Hero Section */
-.hero {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1500&q=80') center/cover;
-  height: 400px;
-  color: white;
-  text-align: center;
-  position: relative;
-}
-
-.hero-fashion::before {
-  content: '';
-  position: absolute;
+/* Header / navigation */
+header{
+  background: var(--card);
+  position: sticky;
   top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(135deg, rgba(0, 114, 255, 0.6), rgba(0, 86, 179, 0.6));
+  z-index: 20;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }
+.header-inner{ display:flex; align-items:center; justify-content:space-between; padding:14px 0; }
+.logo{ color: var(--brand); font-weight:700; font-size:1.25rem; }
 
-.hero-content {
-  background: rgba(0,0,0,0.5);
-  padding: 40px;
-  border-radius: 10px;
-  position: relative;
-  z-index: 1;
-  animation: fadeInUp 1s ease;
-}
+/* mobile nav toggle (CSS only) */
+.nav-toggle-input{ display: none; }
+.nav-toggle{ display: none; cursor: pointer; font-size:1.25rem; padding:6px 10px; border-radius:8px; background:none; border:0; }
+.nav-links{ display:flex; gap:20px; align-items:center; }
+.nav-links a{ text-decoration: none; color: #333; padding:6px 8px; border-radius:8px; }
+.nav-links a.active, .nav-links a:hover{ color: var(--brand); }
 
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.btn {
-  background: #0072ff;
-  color: white;
-  padding: 10px 20px;
-  text-decoration: none;
-  border-radius: 20px;
-  transition: all 0.3s ease;
-  display: inline-block;
-}
-
-.btn:hover {
-  background: #0056b3;
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(0, 114, 255, 0.4);
-}
-
-.btn-outfitly {
-  background: #0072ff;
-  border: 2px solid #4da3ff;
-}
-
-main {
-  padding: 40px 10%;
-  text-align: center;
-}
-
-.flex-row {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-.box, .card {
-  background: white;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.05);
-  flex: 1 1 200px;
-  max-width: 250px;
-  overflow: hidden;
-  transition: all 0.3s ease;
-}
-
-/* Custom Category and Product Card Classes */
-.category-card:hover,
-.product-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 10px 25px rgba(0, 114, 255, 0.3);
-}
-
-.category-card {
-  border-top: 3px solid #4da3ff;
-}
-
-.product-card {
-  border-top: 3px solid #0072ff;
-}
-
-.box img, .card img {
-  width: 100%;
-  height: 150px;
-  object-fit: cover;
-  display: block;
-}
-
-.box h4 {
-  margin: 12px 0 0 0;
-  text-align: center;
-}
-
-.card-body {
-  padding-top: 12px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.price { 
-  color: #0072ff; 
-  font-weight: 700; 
-}
-
-footer {
-  text-align: center;
-  background: #1a1a1a;
-  color: #aaa;
-  padding: 15px;
-}
-
-#loginButton {
-  background-color: #0072ff;
+/* login button */
+#loginButton{
+  background-color: var(--brand);
   color: white;
   padding: 8px 16px;
   border-radius: 20px;
   text-decoration: none;
-  transition: all 0.3s ease;
 }
 
-#loginButton:hover {
-  background-color: #0056b3;
-  transform: scale(1.05);
+/* Search form inside nav */
+.search-form{ display:flex; align-items:center; gap:8px; margin-right:8px; }
+.search-input{ padding:8px 12px; border:1px solid #e5e7eb; border-radius:999px 0 0 999px; outline:none; }
+.search-button{ background:var(--brand); color:white; padding:8px 12px; border:none; border-radius:0 999px 999px 0; cursor:pointer; }
+
+/* Hero */
+.hero{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background: url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1500&q=80') center/cover no-repeat;
+  color: white;
+  text-align: center;
+  position: relative;
+  min-height: 360px;
+}
+.hero-fashion::before{
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(0,114,255,0.5), rgba(0,86,179,0.5));
+}
+.hero-content{
+  position: relative;
+  z-index: 1;
+  background: rgba(0,0,0,0.45);
+  padding: 36px;
+  border-radius: 10px;
+  color: #fff;
+  max-width: 900px;
+  margin: 24px 0;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    padding: 15px 5%;
-  }
-  
-  .nav-links {
-    flex-direction: column;
-    width: 100%;
-    gap: 10px;
-  }
-  
-  .search-form {
-    width: 100%;
-  }
-  
-  .search-input {
-    flex: 1;
-  }
-  
-  .hero {
-    height: 300px;
-  }
-  
-  .flex-row {
-    flex-direction: column;
-    align-items: center;
-  }
+/* Buttons */
+.btn{ background: var(--brand); color: #fff; padding: 10px 20px; border-radius: 20px; text-decoration:none; display:inline-block; }
+.btn-outfitly{ background: var(--brand); border: 2px solid #4da3ff; }
+
+/* Main content layout
+   NOTE: added a larger bottom padding so cards never butt up to the footer.
+*/
+main{
+  padding: 40px 0 100px; /* bottom padding increased to keep content clear of footer */
+  text-align: center;
+}
+
+/* Card/grid */
+.flex-row{ display:flex; justify-content:center; flex-wrap:wrap; gap:20px; }
+
+/* Slightly more padding to give breathing room, and keep consistent across sizes */
+.box, .card{
+  background: var(--card);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+  flex: 1 1 200px;
+  max-width: 250px;
+  transition: all 0.25s ease;
+}
+
+/* Images */
+.box img, .card img{ width:100%; height:150px; object-fit:cover; display:block; border-radius:8px; }
+
+/* Category and product titles:
+   - add vertical margin so they don't stick to the image above or elements below
+*/
+.box h4,
+.card-body h4 {
+  margin: 14px 0 8px; /* top and bottom margins to separate from image and price */
+  padding: 4px 0;
+  text-align: center;
+}
+
+/* product card body spacing:
+   - increase bottom padding so the card's content is visually separated from other elements / footer
+*/
+.card-body{
+  padding: 16px 0 0 0; /* larger bottom padding keeps content from feeling flush */
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:8px;
+}
+
+/* product price */
+.price{ color:var(--brand); font-weight:700; }
+
+/* Footer */
+footer{ text-align:center; background:#1a1a1a; color:#aaa; padding:15px; margin-top: 24px; }
+
+/* Responsive behavior: mobile-friendly nav + layout adjustments */
+@media (max-width: 980px){
+  /* collapse nav into toggle (same approach used on About/Contact/FAQ) */
+  .nav-links{ display:none; position:absolute; top:64px; right: var(--container-pad); background: var(--card); padding:12px; border-radius:10px; box-shadow: 0 6px 20px rgba(0,0,0,0.08); flex-direction:column; width:calc(100% - (var(--container-pad) * 2)); max-width:320px; }
+  .nav-toggle{ display:inline-block; }
+  .nav-toggle-input:checked ~ .nav-links{ display:flex; }
+
+  /* hero and cards adjustments */
+  .hero{ min-height: 260px; }
+  .hero-content{ padding: 20px; }
+  .box, .card{ max-width: 100%; padding:16px; }
+  .box h4, .card-body h4{ margin: 12px 0 6px; padding: 3px 0; }
+  .card-body{ padding:12px 0 14px; }
+}
+
+@media (max-width: 768px){
+  .header-inner{ gap: 12px; }
+  .search-form{ width:100%; }
+  .hero{ min-height:220px; }
+  .hero-content{ padding:16px; }
+}
+
+@media (max-width: 480px){
+  .container{ padding-left:4%; padding-right:4%; }
+  .hero-content{ padding:12px; font-size: 0.95rem; }
+  .box img, .card img{ height:120px; }
+  .flex-row{ gap:12px; }
+  .box, .card{ padding:12px; }
+  .box h4, .card-body h4{ margin: 10px 0 6px; padding: 2px 0; }
+  .card-body{ padding:10px 0 12px; }
 }
