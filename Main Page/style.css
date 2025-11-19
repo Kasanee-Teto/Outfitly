@@ -1,0 +1,249 @@
+:root{
+  --brand: #0072ff;
+  --bg: #f9fafb;
+  --card: #fff;
+  --muted: #6b6b6b;
+  --max-width: 1200px;
+  --container-pad: 5%;
+  --radius: 10px;
+}
+
+/* Reset / base */
+*{ box-sizing: border-box; }
+body {
+  font-family: 'Nunito', sans-serif;
+  margin: 0;
+  background: var(--bg);
+  color: #333;
+}
+
+h3{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+/* Generic center container (matches other pages) */
+.container{
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-pad);
+}
+
+/* Header / navigation */
+header{
+  background: var(--card);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+.header-inner{ display:flex; align-items:center; justify-content:space-between; padding:14px 0; }
+.logo{ color: var(--brand); font-weight:700; font-size:1.25rem; }
+
+/* mobile nav toggle (CSS only) */
+.nav-toggle-input{ display: none; }
+.nav-toggle{ display: none; cursor: pointer; font-size:1.25rem; padding:6px 10px; border-radius:8px; background:none; border:0; }
+.nav-links{ display:flex; gap:20px; align-items:center; }
+.nav-links a{ text-decoration: none; color: #333; padding:6px 8px; border-radius:8px; }
+.nav-links a.active, .nav-links a:hover{ color: var(--brand); }
+
+/* login button */
+#loginButton{
+  background-color: var(--brand);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  text-decoration: none;
+}
+
+/* Search form inside nav */
+.search-form{ display:flex; align-items:center; gap:8px; margin-right:8px; }
+.search-input{ padding:8px 12px; border:1px solid #e5e7eb; border-radius:999px 0 0 999px; outline:none; }
+.search-button{ background:var(--brand); color:white; padding:8px 12px; border:none; border-radius:0 999px 999px 0; cursor:pointer; }
+
+/* Hero */
+.hero{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background: url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1500&q=80') center/cover no-repeat;
+  color: white;
+  text-align: center;
+  position: relative;
+  min-height: 360px;
+}
+.hero-fashion::before{
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(0,114,255,0.5), rgba(0,86,179,0.5));
+}
+.hero-content{
+  position: relative;
+  z-index: 1;
+  background: rgba(0,0,0,0.45);
+  padding: 36px;
+  border-radius: 10px;
+  color: #fff;
+  max-width: 900px;
+  margin: 24px 0;
+}
+
+/* Buttons */
+.btn{ background: var(--brand); color: #fff; padding: 10px 20px; border-radius: 20px; text-decoration:none; display:inline-block; }
+.btn-outfitly{ background: var(--brand); border: 2px solid #4da3ff; }
+
+/* Main content layout
+   NOTE: added a larger bottom padding so cards never butt up to the footer.
+*/
+main{
+  padding: 40px 0 100px; /* bottom padding increased to keep content clear of footer */
+  text-align: center;
+}
+
+/* Card/grid */
+.flex-row{ display:flex; justify-content:center; flex-wrap:wrap; gap:20px; }
+
+/* Slightly more padding to give breathing room, and keep consistent across sizes */
+.box, .card{
+  background: var(--card);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+  flex: 1 1 200px;
+  max-width: 250px;
+  /* make hover subtler: shorter duration, smaller movement, lighter shadow */
+  transition: transform 180ms cubic-bezier(.2,.9,.3,1), box-shadow 180ms cubic-bezier(.2,.9,.3,1), opacity 180ms ease;
+  will-change: transform, box-shadow;
+  position: relative;
+  z-index: 0;
+}
+
+/* Card images */
+.box img, .card img{
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+  border-radius: 8px;
+  /* image zoom should be subtle and fast */
+  transition: transform 220ms ease;
+}
+
+/* Category/Product specific */
+.category-card {
+  border-top: 3px solid #4da3ff;
+}
+.product-card {
+  border-top: 3px solid #0072ff;
+}
+
+/* Titles and details */
+.box h4, .card-body h4 {
+    margin: 14px 0 0 0;
+    padding: 4px 0;
+    text-align: center;
+}
+
+/* product card body spacing:
+   - increase bottom padding so the card's content is visually separated from other elements / footer
+*/
+.card-body{
+  padding: 16px 0 0 0; 
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:8px;
+}
+
+/* product price */
+.price{ color:var(--brand); font-weight:700; }
+
+/* Hover / focus interactions (subtle)
+   - reduced translateY and scale
+   - lighter, more neutral shadow
+   - smaller image zoom
+   - shorter duration so effect feels snappy but understated
+*/
+@media (pointer: fine) {
+  .category-card:hover, .product-card:hover,
+  .box:hover, .card:hover,
+  .category-card:focus-within, .product-card:focus-within,
+  .box:focus-within, .card:focus-within {
+    transform: translateY(-6px) scale(1.01); /* subtle lift + tiny scale */
+    box-shadow: 0 6px 18px rgba(0, 114, 255, 0.12), 0 2px 8px rgba(0,0,0,0.06); /* lighter shadow */
+    z-index: 8;
+  }
+
+  .category-card:hover img, .product-card:hover img,
+  .box:hover img, .card:hover img,
+  .category-card:focus-within img, .product-card:focus-within img,
+  .box:focus-within img, .card:focus-within img {
+    transform: scale(1.02); /* very subtle zoom */
+  }
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce){
+  .box, .card, .box img, .card img{
+    transition: none !important;
+    transform: none !important;
+  }
+}
+
+/* Footer */
+footer{ text-align:center; background:#1a1a1a; color:#aaa; padding:15px; margin-top: 24px; }
+
+/* Login button */
+#loginButton{
+  background-color: var(--brand);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  text-decoration: none;
+  transition: all 0.18s ease;
+}
+#loginButton:hover{
+  background-color: #0056b3;
+  transform: scale(1.03);
+}
+
+/* Responsive behavior: mobile-friendly nav + layout adjustments */
+@media (max-width: 1024px){
+  .logo{ padding-left: 20px; }
+  /* collapse nav into toggle */
+  .nav-links{ display:none; position:absolute; top:64px; right: var(--container-pad); background: var(--card); padding:12px; border-radius:10px; box-shadow: 0 6px 20px rgba(0,0,0,0.08); flex-direction: column; }
+  .nav-toggle{ display:inline-block; }
+  .nav-toggle-input:checked ~ .nav-links{ display:flex; }
+  
+  /* hero and cards adjustments */
+  .hero{ min-height: 260px; }
+  .hero-content{ padding: 20px; }
+  .box, .card{ padding:16px; }
+  .box h4, .card-body h4{ margin: 12px 0 6px; padding: 3px 0; }
+  .card-body{ padding:12px 0 14px; }
+}
+
+@media (max-width: 768px){
+  .header-inner{ gap: 12px; }
+  .search-form{ width:100%; }
+  .hero{ min-height:220px; }
+  .hero-content{ padding:16px; }
+}
+
+@media (max-width: 480px){
+  .container{ padding-left:4%; padding-right:4%; }
+  .hero-content{ padding:12px; font-size: 0.95rem; }
+  .flex-row{ gap:12px; }
+  .box, .card{ padding:12px; }
+  .box h4, .card-body h4{ margin: 10px 0 6px; padding: 2px 0; }
+  .card-body{ padding:10px 0 12px; }
+
+  /* On small/touch screens disable lift to avoid layout jumps */
+  .box, .card {
+    transform: none !important;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+  }
+}
