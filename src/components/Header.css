@@ -9,19 +9,24 @@ header {
   justify-content: space-between;
   gap: 12px;
   padding: 12px 0;
-  flex-wrap: nowrap;
+  flex-wrap: nowrap;        /* keep single line */
+  overflow: hidden;
 }
 
 .header-left {
   display: flex;
   align-items: center;
   gap: 12px;
+  flex: 1 1 auto;
+  min-width: 0;             /* allow shrinking within line */
 }
 
 .logo {
   font-size: 1.5rem;
   font-weight: 800;
   margin: 0;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .nav-toggle {
@@ -31,6 +36,7 @@ header {
   border-radius: 8px;
   padding: 6px 10px;
   cursor: pointer;
+  flex-shrink: 0;
 }
 
 .nav-links {
@@ -96,39 +102,97 @@ header {
   border-radius: 8px;
   padding: 6px 10px;
   background: #fff;
+  min-width: 120px;
+  max-width: 170px;
+  flex: 0 1 170px;          /* allows shrinking but stays inline */
 }
 
 .currency-badge {
   font-size: 0.9rem;
   color: #6b7280;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+@media (max-width: 1080px) {
+  .header-inner {
+    gap: 10px;
+  }
+
+  .search-form {
+    flex: 1 1 auto;
+    order: 3;
+  }
 }
 
 @media (max-width: 900px) {
   .nav-toggle {
     display: inline-flex;
   }
-  .header-inner {
-    flex-wrap: wrap;
-  }
+
   .nav-links {
     display: none;
-    width: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 64px;
+    padding: 12px 16px;
+    background: #ffffff;
+    border-bottom: 1px solid #ececec;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
+    gap: 10px;
+    z-index: 30;
   }
-  .nav-links[style] {
-    display: flex !important;
+
+  .nav-links.open {
+    display: flex;
   }
+
   .search-form {
     width: 100%;
     flex-direction: column;
     align-items: stretch;
+    order: 1;
   }
+
   .search-input,
   .search-select,
   .search-button,
   .location-select {
     width: 100%;
     max-width: none;
+  }
+
+  .header-left {
+    justify-content: flex-start;
+    gap: 8px;
+  }
+
+  .logo {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 540px) {
+  .header-inner {
+    gap: 8px;
+  }
+
+  .logo {
+    font-size: 1.15rem;
+  }
+
+  .location-select {
+    max-width: 150px;
+  }
+
+  .currency-badge {
+    display: none; /* save horizontal space on very small screens */
+  }
+
+  .nav-links a {
+    padding: 10px 12px;
   }
 }

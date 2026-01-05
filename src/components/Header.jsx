@@ -1,5 +1,5 @@
-import React, { useMemo, useState } from 'react';
-import { NavLink, useNavigate } from 'react-router-dom';
+import React, { useMemo, useState, useEffect } from 'react';
+import { NavLink, useNavigate, useLocation } from 'react-router-dom';
 import './Header.css';
 import { categories as categoryList } from '../data/products';
 import { useCurrency } from '../context/CurrencyContext';
@@ -19,9 +19,15 @@ function Header() {
   const [term, setTerm] = useState('');
   const [category, setCategory] = useState('all');
   const navigate = useNavigate();
-  const { location, setLocation, currency } = useCurrency();
+  const location = useLocation();
+  const { location: userLocation, setLocation, currency } = useCurrency();
 
   const categories = useMemo(() => ['all', ...categoryList], []);
+
+  useEffect(() => {
+    // Close menu on any route change (covers nav item clicks)
+    setOpen(false);
+  }, [location]);
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -29,6 +35,9 @@ function Header() {
     if (term) params.set('q', term);
     if (category && category !== 'all') params.set('category', category);
     navigate(`/search?${params.toString()}`);
+  };
+
+  const handleNavItemClick = () => {
     setOpen(false);
   };
 
@@ -43,7 +52,7 @@ function Header() {
           <select
             id="location-select"
             className="location-select"
-            value={location}
+            value={userLocation}
             onChange={(e) => setLocation(e.target.value)}
           >
             {LOCATION_OPTIONS.map((opt) => (
@@ -68,8 +77,7 @@ function Header() {
 
         <nav
           id={NAV_ID}
-          className="nav-links"
-          style={open ? { display: 'flex' } : undefined}
+          className={`nav-links${open ? ' open' : ''}`}
           role="navigation"
           aria-label="Main navigation"
         >
@@ -101,22 +109,28 @@ function Header() {
             </button>
           </form>
 
-          <NavLink to="/" end>
+          <NavLink to="/" end onClick={handleNavItemClick}>
             Home
           </NavLink>
-          <NavLink to="/about">About Us</NavLink>
-          <NavLink to="/contact">Contact Us</NavLink>
-          <NavLink to="/faq">FAQ</NavLink>
-          <a href="*" aria-label="Blog">
+          <NavLink to="/about" onClick={handleNavItemClick}>
+            About Us
+          </NavLink>
+          <NavLink to="/contact" onClick={handleNavItemClick}>
+            Contact Us
+          </NavLink>
+          <NavLink to="/faq" onClick={handleNavItemClick}>
+            FAQ
+          </NavLink>
+          <a href="*" aria-label="Blog" onClick={handleNavItemClick}>
             Blog
           </a>
-          <a href="*" id="loginButton">
+          <a href="*" id="loginButton" onClick={handleNavItemClick}>
             Login
           </a>
-          <a href="*" className="profile-link">
+          <a href="*" className="profile-link" onClick={handleNavItemClick}>
             Profile
           </a>
-          <a href="*" aria-label="Cart">
+          <a href="*" aria-label="Cart" onClick={handleNavItemClick}>
             Cart
           </a>
         </nav>
