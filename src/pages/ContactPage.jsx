@@ -12,7 +12,7 @@ function ContactPage() {
       </section>
 
       <section className="contact-grid">
-        <form className="contact-form" action="#" method="post" noValidate>
+        <form className="contact-form" action="#" method="post">
           <label htmlFor="name">Name</label>
           <input id="name" name="name" type="text" placeholder="Your name" required />
 
