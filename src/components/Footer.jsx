@@ -1,9 +1,10 @@
 import React from 'react';
 
 function Footer() {
+  const year = new Date().getFullYear();
   return (
     <footer>
-      <p>© 2025 Outfitly. All Rights Reserved.</p>
+      <p>© {year} Outfitly. All Rights Reserved.</p>
     </footer>
   );
 }

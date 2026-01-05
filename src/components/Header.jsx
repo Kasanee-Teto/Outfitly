@@ -4,6 +4,16 @@ import './Header.css';
 import { categories as categoryList } from '../data/products';
 import { useCurrency } from '../context/CurrencyContext';
 
+const NAV_ID = 'primary-nav';
+const LOCATION_OPTIONS = [
+  { code: 'ID', label: 'ID (IDR)' },
+  { code: 'US', label: 'US (USD)' },
+  { code: 'UK', label: 'UK (GBP)' },
+  { code: 'EU', label: 'EU (EUR)' },
+  { code: 'JP', label: 'JP (JPY)' },
+  { code: 'IN', label: 'IN (INR)' },
+];
+
 function Header() {
   const [open, setOpen] = useState(false);
   const [term, setTerm] = useState('');
@@ -25,7 +35,7 @@ function Header() {
   return (
     <header>
       <div className="header-inner container">
-        <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+        <div className="header-left">
           <h1 className="logo">Outfitly</h1>
           <label className="visually-hidden" htmlFor="location-select">
             Select location
@@ -36,26 +46,28 @@ function Header() {
             value={location}
             onChange={(e) => setLocation(e.target.value)}
           >
-            <option value="ID">ID (IDR)</option>
-            <option value="US">US (USD)</option>
-            <option value="UK">UK (GBP)</option>
-            <option value="EU">EU (EUR)</option>
-            <option value="JP">JP (JPY)</option>
-            <option value="IN">IN (INR)</option>
+            {LOCATION_OPTIONS.map((opt) => (
+              <option key={opt.code} value={opt.code}>
+                {opt.label}
+              </option>
+            ))}
           </select>
-          <span style={{ fontSize: '0.9rem', color: '#6b7280' }}>{currency}</span>
+          <span className="currency-badge">{currency}</span>
         </div>
 
         <button
           type="button"
           className="nav-toggle"
           aria-label="Toggle navigation"
+          aria-expanded={open}
+          aria-controls={NAV_ID}
           onClick={() => setOpen((prev) => !prev)}
         >
           ☰
         </button>
 
         <nav
+          id={NAV_ID}
           className="nav-links"
           style={open ? { display: 'flex' } : undefined}
           role="navigation"
@@ -95,14 +107,18 @@ function Header() {
           <NavLink to="/about">About Us</NavLink>
           <NavLink to="/contact">Contact Us</NavLink>
           <NavLink to="/faq">FAQ</NavLink>
-          <a href="*">Blog</a>
+          <a href="*" aria-label="Blog">
+            Blog
+          </a>
           <a href="*" id="loginButton">
             Login
           </a>
           <a href="*" className="profile-link">
             Profile
           </a>
-          <a href="*">Cart</a>
+          <a href="*" aria-label="Cart">
+            Cart
+          </a>
         </nav>
       </div>
     </header>

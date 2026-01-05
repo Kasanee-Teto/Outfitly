@@ -14,6 +14,6 @@ root.render(
       <CurrencyProvider>
         <App />
       </CurrencyProvider>
-    </BrowserRouter>a
+    </BrowserRouter>
   </React.StrictMode>
 );

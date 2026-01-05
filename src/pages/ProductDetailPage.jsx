@@ -2,24 +2,7 @@ import React from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { products } from '../data/products';
 import { useCurrency } from '../context/CurrencyContext';
-
-const SYMBOLS = {
-  IDR: 'Rp',
-  USD: '$',
-  GBP: '£',
-  EUR: '€',
-  JPY: '¥',
-  INR: '₹',
-};
-
-function formatPrice(value, currency) {
-  if (Number.isNaN(value)) return '-';
-  const symbol = SYMBOLS[currency] || currency;
-  return `${symbol}${value.toLocaleString(undefined, {
-    maximumFractionDigits: currency === 'IDR' ? 0 : 2,
-    minimumFractionDigits: currency === 'IDR' ? 0 : 2,
-  })}`;
-}
+import { formatPrice } from '../utils/formatPrice';
 
 function ProductDetailPage() {
   const { id } = useParams();
@@ -48,7 +31,7 @@ function ProductDetailPage() {
         <div>
           <img
             src={product.image}
-            alt={product.imageAlt}
+            alt={product.imageAlt || product.name}
             width="700"
             height="900"
             loading="lazy"

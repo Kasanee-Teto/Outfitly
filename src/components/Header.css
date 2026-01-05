@@ -12,6 +12,12 @@ header {
   flex-wrap: nowrap;
 }
 
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
 .logo {
   font-size: 1.5rem;
   font-weight: 800;
@@ -24,6 +30,7 @@ header {
   border: 1px solid #ddd;
   border-radius: 8px;
   padding: 6px 10px;
+  cursor: pointer;
 }
 
 .nav-links {
@@ -31,6 +38,21 @@ header {
   align-items: center;
   gap: 12px;
   flex-wrap: nowrap;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #111827;
+  padding: 6px 8px;
+  border-radius: 8px;
+  transition: color 120ms ease, box-shadow 120ms ease;
+}
+
+.nav-links a:hover,
+.nav-links a:focus-visible {
+  color: #0072ff;
+  box-shadow: 0 0 0 2px rgba(0, 114, 255, 0.18);
+  outline: none;
 }
 
 .search-form {
@@ -74,6 +96,11 @@ header {
   border-radius: 8px;
   padding: 6px 10px;
   background: #fff;
+}
+
+.currency-badge {
+  font-size: 0.9rem;
+  color: #6b7280;
 }
 
 @media (max-width: 900px) {
