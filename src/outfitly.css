@@ -32,100 +32,6 @@ h3 {
   padding: 0 var(--container-pad);
 }
 
-/* ---- Header / navigation ---- */
-header {
-  background: var(--card);
-  position: sticky;
-  top: 0;
-  z-index: 20;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-}
-
-.header-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 14px 0;
-}
-
-.logo {
-  color: var(--brand);
-  font-weight: 700;
-  font-size: 1.2rem;
-}
-
-/* mobile nav toggle (CSS only) */
-.nav-toggle-input {
-  display: none;
-}
-
-.nav-toggle {
-  display: none;
-  cursor: pointer;
-  font-size: 1.25rem;
-  padding: 6px 10px;
-  border-radius: 8px;
-  background: none;
-  border: 0;
-}
-
-.nav-links {
-  display: flex;
-  gap: 20px;
-  align-items: center;
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: #333;
-  padding: 6px 8px;
-  border-radius: 8px;
-}
-
-.nav-links a.active,
-.nav-links a:hover {
-  color: var(--brand);
-}
-
-/* login button */
-#loginButton {
-  background-color: var(--brand);
-  color: white;
-  padding: 8px 16px;
-  border-radius: 20px;
-  text-decoration: none;
-  transition: all 0.18s ease;
-}
-
-#loginButton:hover {
-  background-color: #0056b3;
-  transform: scale(1.03);
-}
-
-/* ---- Search form inside nav (home) ---- */
-.search-form {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-right: 8px;
-}
-
-.search-input {
-  padding: 8px 12px;
-  border: 1px solid #e5e7eb;
-  border-radius: 999px 0 0 999px;
-  outline: none;
-}
-
-.search-button {
-  background: var(--brand);
-  color: white;
-  padding: 8px 12px;
-  border: none;
-  border-radius: 0 999px 999px 0;
-  cursor: pointer;
-}
-
 /* ---- Hero (home) ---- */
 .hero {
   display: flex;
@@ -759,30 +665,13 @@ footer {
   }
 }
 
-@media (max-width: 980px) {
+@media (max-width: 1024px) {
   .contact-grid {
     grid-template-columns: 1fr;
   }
 
   .faq-grid {
     grid-template-columns: 1fr;
-  }
-
-  .nav-links {
-    display: none;
-    position: absolute;
-    top: 64px;
-    right: var(--container-pad);
-    background: var(--card);
-    padding: 12px;
-    border-radius: 10px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .nav-toggle {
-    display: inline-block;
   }
 }
 

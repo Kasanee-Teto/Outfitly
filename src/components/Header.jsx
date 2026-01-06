@@ -25,7 +25,7 @@ function Header() {
   const categories = useMemo(() => ['all', ...categoryList], []);
 
   useEffect(() => {
-    // Close menu on any route change (covers nav item clicks)
+    // Close menu on any route change
     setOpen(false);
   }, [location]);
 
@@ -42,10 +42,12 @@ function Header() {
   };
 
   return (
-    <header>
+    <header className="site-header">
       <div className="header-inner container">
         <div className="header-left">
-          <h1 className="logo">Outfitly</h1>
+          <NavLink to="/" end onClick={handleNavItemClick} style={{ textDecoration: 'none' }} >
+            <h1 className="logo">Outfitly</h1>
+          </NavLink>
           <label className="visually-hidden" htmlFor="location-select">
             Select location
           </label>
@@ -77,7 +79,7 @@ function Header() {
 
         <nav
           id={NAV_ID}
-          className={`nav-links${open ? ' open' : ''}`}
+          className={`nav-links${open ? ' nav-links-open' : ''}`}
           role="navigation"
           aria-label="Main navigation"
         >
@@ -109,9 +111,6 @@ function Header() {
             </button>
           </form>
 
-          <NavLink to="/" end onClick={handleNavItemClick}>
-            Home
-          </NavLink>
           <NavLink to="/about" onClick={handleNavItemClick}>
             About Us
           </NavLink>
@@ -126,9 +125,6 @@ function Header() {
           </a>
           <a href="*" id="loginButton" onClick={handleNavItemClick}>
             Login
-          </a>
-          <a href="*" className="profile-link" onClick={handleNavItemClick}>
-            Profile
           </a>
           <a href="*" aria-label="Cart" onClick={handleNavItemClick}>
             Cart
