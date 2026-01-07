@@ -1,8 +1,9 @@
 import React from 'react';
+import './styles/ContactPage.css';
 
 function ContactPage() {
   return (
-    <main className="contact container">
+    <main className="contact container contact-page">
       <section className="intro">
         <h2>Contact Us</h2>
         <p className="lead">

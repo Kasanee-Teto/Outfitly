@@ -1,8 +1,9 @@
 import React from 'react';
+import './styles/AboutPage.css';
 
 function AboutPage() {
   return (
-    <main className="about container">
+    <main className="about container about-page">
       <section className="intro">
         <h2>Our Story</h2>
         <p className="lead">

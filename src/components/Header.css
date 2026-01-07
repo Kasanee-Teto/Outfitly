@@ -75,7 +75,7 @@
 .site-header .nav-links a {
   text-decoration: none;
   color:  #333;
-  padding: 6px 8px;
+  padding: 6px 5px;
   border-radius: 8px;
   transition: color 120ms ease, box-shadow 120ms ease;
   flex-shrink: 1;
