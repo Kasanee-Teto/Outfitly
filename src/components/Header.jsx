@@ -126,9 +126,9 @@ function Header() {
           <a href="*" id="loginButton" onClick={handleNavItemClick}>
             Login
           </a>
-          <a href="*" aria-label="Cart" onClick={handleNavItemClick}>
+          <NavLink to="/cart" onClick={handleNavItemClick}>
             Cart
-          </a>
+          </NavLink>
         </nav>
       </div>
     </header>

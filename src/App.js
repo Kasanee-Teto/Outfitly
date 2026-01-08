@@ -10,6 +10,7 @@ import SearchResultsPage from './pages/SearchResultsPage';
 import ProductDetailPage from './pages/ProductDetailPage';
 import NotFoundPage from './pages/NotFoundPage';
 import './App.css';
+import CartPage from './pages/CartPage';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/faq" element={<FAQPage />} />
           <Route path="/search" element={<SearchResultsPage />} />
           <Route path="/product/:id" element={<ProductDetailPage />} />
+          <Route path="/cart" element={<CartPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </div>

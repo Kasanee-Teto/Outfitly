@@ -98,8 +98,7 @@ main.outfitly-main {
 }
 
 /* Card/grid */
-.box,
-.card {
+.box {
   background: var(--card);
   padding: 20px;
   border-radius: 10px;
@@ -113,8 +112,7 @@ main.outfitly-main {
   z-index: 0;
 }
 
-.box img,
-.card img {
+.box img {
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
@@ -124,8 +122,7 @@ main.outfitly-main {
 }
 
 /* Add a pseudo-element to emulate hover shadow — animatable via opacity/transform */
-.box::after,
-.card::after {
+.box::after {
   content: '';
   position: absolute;
   left: 12px;
@@ -150,19 +147,10 @@ main.outfitly-main {
   border-top: 3px solid #0072ff;
 }
 
-.box h4,
-.card-body h4 {
+.box h4 {
   margin: 14px 0 0 0;
   padding: 4px 0;
   text-align: center;
-}
-
-.card-body {
-  padding: 16px 0 0 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 8px;
 }
 
 .price {
@@ -170,55 +158,6 @@ main.outfitly-main {
   font-weight: 700;
 }
 
-/* Hover / focus interactions */
-@media (pointer: fine) {
-  .category-card:hover,
-  .product-card:hover,
-  .box:hover,
-  .card:hover,
-  .category-card:focus-within,
-  .product-card:focus-within,
-  .box:focus-within,
-  .card:focus-within {
-    transform: translateY(-6px) scale(1.01);
-    /* Keep a subtle shadow but don't animate it — avoid expensive shadow animation */
-    box-shadow: 0 6px 18px rgba(0, 114, 255, 0.12), 0 2px 8px rgba(0, 0, 0, 0.06);
-    z-index: 8;
-  }
-
-  .category-card:hover img,
-  .product-card:hover img,
-  .box:hover img,
-  .card:hover img,
-  .category-card:focus-within img,
-  .product-card:focus-within img,
-  .box:focus-within img,
-  .card:focus-within img {
-    transform: scale(1.02);
-  }
-
-  .box:hover::after,
-  .card:hover::after,
-  .box:focus-within::after,
-  .card:focus-within::after {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-/* Respect reduced motion */
-@media (prefers-reduced-motion: reduce) {
-  .box,
-  .card,
-  .box img,
-  .card img,
-  .box::after,
-  .card::after {
-    transition: none !important;
-    transform: none !important;
-    opacity: 1 !important;
-  }
-}
 
 /* ---- About page ---- */
 .about {
@@ -236,14 +175,6 @@ main.outfitly-main {
   display: flex;
   gap: 16px;
   margin-top: 20px;
-}
-
-.mission-vision .card {
-  flex: 1;
-  background: var(--card);
-  padding: 16px;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
 }
 
 .values {
@@ -728,23 +659,17 @@ footer {
     gap: 12px;
   }
 
-  .box,
-  .card {
+  .box {
     padding: 12px;
   }
 
-  .box h4,
-  .card-body h4 {
+  .box h4 {
     margin: 10px 0 6px;
     padding: 2px 0;
   }
 
-  .card-body {
-    padding: 10px 0 12px;
-  }
-
   /* Use :is() here to avoid duplicating the exact ".box, .card" selector */
-  :is(.box, .card) {
+  :is(.box) {
     transform: none !important;
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
   }

@@ -1,4 +1,5 @@
 import React from 'react';
+import Card from '../components/Cards/Card';
 
 function AboutPage() {
   return (
@@ -13,20 +14,10 @@ function AboutPage() {
       </section>
 
       <section className="mission-vision">
-        <div className="card">
-          <h3>Our Mission</h3>
-          <p>
-            To empower people with access to quality clothing while promoting responsible
-            production and inclusive sizing.
-          </p>
-        </div>
-        <div className="card">
-          <h3>Our Vision</h3>
-          <p>
-            To be a trusted brand where style and sustainability meet — accessible to
-            many, designed to last.
-          </p>
-        </div>
+        <Card title="Our Mission" description="To empower people with access to quality clothing while promoting responsible
+            production and inclusive sizing."/>
+        <Card title="Our Vision" description="To be a trusted brand where style and sustainability meet — accessible to
+            many, designed to last."/>
       </section>
 
       <section className="values">
