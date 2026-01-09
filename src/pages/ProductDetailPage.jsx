@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import { products } from '../data/products';
 import { useCurrency } from '../context/CurrencyContext';
 import { formatPrice } from '../utils/formatPrice';
+import './styles/ProductDetailPage.css';
 
 function ProductDetailPage() {
   const { id } = useParams();
@@ -11,7 +12,7 @@ function ProductDetailPage() {
 
   if (!product) {
     return (
-      <main className="container" style={{ padding: '40px 0' }}>
+      <main className="container notfound-page">
         <h2>Product not found</h2>
         <Link className="btn btn-outfitly" to="/">
           Back to Home
@@ -23,30 +24,25 @@ function ProductDetailPage() {
   const converted = convert(product.priceIdr);
 
   return (
-    <main className="container" style={{ padding: '24px 0' }}>
-      <div
-        className="product-detail"
-        style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px' }}
-      >
+    <main className="container product-detail-page">
+      <div className="product-detail">
         <div>
           <img
+            className="product-image"
             src={product.image}
             alt={product.imageAlt || product.name}
             width="700"
             height="900"
             loading="lazy"
             decoding="async"
-            style={{ width: '100%', borderRadius: '16px', objectFit: 'cover' }}
           />
         </div>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-          <p style={{ color: '#6b7280' }}>{product.category}</p>
+        <div className="product-meta">
+          <p className="product-category">{product.category}</p>
           <h2>{product.name}</h2>
-          <p style={{ fontSize: '1.4rem', fontWeight: 700 }}>
-            {formatPrice(converted, currency)}
-          </p>
+          <p className="product-price">{formatPrice(converted, currency)}</p>
           <p>{product.description}</p>
-          <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+          <div className="product-actions">
             <button className="btn btn-outfitly" type="button">
               Add to Cart
             </button>
@@ -54,7 +50,7 @@ function ProductDetailPage() {
               Save to Wishlist
             </button>
           </div>
-          <p style={{ fontSize: '0.9rem', color: '#6b7280' }}>
+          <p className="product-note">
             Prices converted from IDR using latest cached rates.
           </p>
         </div>

@@ -1,8 +1,9 @@
 import React from 'react';
+import './styles/FAQPage.css';
 
 function FAQPage() {
   return (
-    <main className="faq container">
+    <main className="faq container faq-page">
       <section className="hero">
         <h2>Frequently Asked Questions</h2>
         <p className="lead">

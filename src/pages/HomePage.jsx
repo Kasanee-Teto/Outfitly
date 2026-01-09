@@ -1,6 +1,7 @@
 import React, { useMemo } from 'react';
 import ProductCard from '../components/ProductCard';
 import { products } from '../data/products';
+import './styles/HomePage.css';
 
 function shuffle(array) {
   const copy = [...array];
@@ -15,7 +16,7 @@ function HomePage() {
   const trending = useMemo(() => shuffle(products).slice(0, 4), []);
 
   return (
-    <>
+    <div className="home-page">
       <section className="hero hero-fashion">
         <div className="hero-content container">
           <h2>Express Your Unique Style</h2>
@@ -58,7 +59,7 @@ function HomePage() {
           </div>
         </section>
       </main>
-    </>
+    </div>
   );
 }
 

@@ -1,0 +1,63 @@
+.home-page .hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1500&q=80')
+    center/cover no-repeat;
+  color: white;
+  text-align: center;
+  position: relative;
+  min-height: 360px;
+}
+
+.home-page .hero-fashion::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 114, 255, 0.5),
+    rgba(0, 86, 179, 0.5)
+  );
+}
+
+.home-page .hero-content {
+  position: relative;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.45);
+  padding: 36px;
+  border-radius: 10px;
+  color: #fff;
+  max-width: 900px;
+  margin: 24px 0;
+}
+
+.home-page .outfitly-main {
+  padding: 40px 0 100px;
+  text-align: center;
+}
+
+.home-page .category-card {
+  border-top: 3px solid #4da3ff;
+}
+
+.home-page .trending .product-card {
+  border-top: 3px solid #0072ff;
+}
+
+@media (max-width: 768px) {
+  .home-page .hero {
+    min-height: 220px;
+  }
+
+  .home-page .hero-content {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-page .hero-content {
+    padding: 12px;
+    font-size: 0.95rem;
+  }
+}

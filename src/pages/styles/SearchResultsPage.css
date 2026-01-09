@@ -1,0 +1,15 @@
+.search-page {
+  padding: 10px 0;
+  padding-top: 50px;
+}
+
+.search-page .search-header {
+  margin-bottom: 16px;
+  position: static;
+}
+
+.search-page .results-grid {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}

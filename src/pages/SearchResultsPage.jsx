@@ -2,6 +2,7 @@ import React, { useMemo } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { products } from '../data/products';
 import ProductCard from '../components/ProductCard';
+import './styles/SearchResultsPage.css';
 
 function filterProducts(list, term, category) {
   const lowerTerm = term?.toLowerCase() || '';
@@ -24,15 +25,9 @@ function SearchResultsPage() {
   const filtered = useMemo(() => filterProducts(products, term, category), [term, category]);
 
   return (
-    <main
-      className="container"
-      style={{
-        padding: '10px 0',
-        paddingTop: '50px',
-      }}
-    >
-      <header style={{ marginBottom: '16px', position: 'static' }}>
-        <h2 style={{ marginTop: 0 }}>Search Results</h2>
+    <main className="container search-page">
+      <header className="search-header">
+        <h2>Search Results</h2>
         <p>
           Showing {filtered.length} item{filtered.length === 1 ? '' : 's'} for "
           {term || 'all'}" {category !== 'all' && `(Category: ${category})`}
@@ -41,7 +36,7 @@ function SearchResultsPage() {
       {filtered.length === 0 ? (
         <p>No results found. Try another keyword or category.</p>
       ) : (
-        <div className="flex-row" style={{ gap: '16px', flexWrap: 'wrap' }}>
+        <div className="results-grid">
           {filtered.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}

@@ -21,7 +21,7 @@ function ProductCard({ product }) {
             decoding="async"
           />
         </div>
-        <div className="card-body">
+        <div className="product-card-body">
           <div className="category">{product.category}</div>
           <div className="name">{product.name}</div>
           <div className="price">{formatPrice(converted, currency)}</div>
