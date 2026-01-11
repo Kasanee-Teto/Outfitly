@@ -11,6 +11,9 @@ import ProductDetailPage from './pages/ProductDetailPage';
 import NotFoundPage from './pages/NotFoundPage';
 import './App.css';
 import CartPage from './pages/CartPage';
+import CheckoutPage from './pages/CheckoutPage';
+import PaymentConfirmationPage from './pages/PaymentConfirmationPage';
+import OrderPage from './pages/OrderPage';
 
 function App() {
   return (
@@ -25,6 +28,9 @@ function App() {
           <Route path="/search" element={<SearchResultsPage />} />
           <Route path="/product/:id" element={<ProductDetailPage />} />
           <Route path="/cart" element={<CartPage />} />
+          <Route path="/checkout" element={<CheckoutPage />} />
+          <Route path="/payment-confirmation" element={<PaymentConfirmationPage />} />
+          <Route path="/order" element={<OrderPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </div>

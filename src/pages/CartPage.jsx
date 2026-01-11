@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect } from 'react';
+import React, { Fragment } from 'react';
 import { cartProducts } from '../data/cart-products.js';
 import Button from '../components/Buttons/Button.jsx';
 import { formatPrice } from '../utils/formatPrice.js';
