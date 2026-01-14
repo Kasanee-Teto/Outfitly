@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { products } from '../data/products';
 import { useCurrency } from '../context/CurrencyContext';
-import { formatPrice } from '../utils/formatPrice';
+import { formatPrice } from './utils/formatPrice';
 import './styles/ProductDetailPage.css';
 import Button from '../components/Buttons/Button.jsx';
 import ProductRate from '../components/ProductRates/ProductRate.jsx';

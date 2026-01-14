@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useCurrency } from '../context/CurrencyContext';
-import { formatPrice } from '../utils/formatPrice';
-import './ProductCard.css';
+import { formatPrice } from './utils/formatPrice';
+import './styles/ProductCard.css';
 import ProductRate from './ProductRates/ProductRate';
 
 function ProductCard({ product }) {

@@ -1,6 +1,6 @@
 import React, { useMemo, useState, useEffect } from 'react';
 import { NavLink, useNavigate, useLocation } from 'react-router-dom';
-import './Header.css';
+import './styles/Header.css';
 import { categories as categoryList } from '../data/products';
 import { useCurrency } from '../context/CurrencyContext';
 

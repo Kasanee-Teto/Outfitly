@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { cartProducts } from '../data/cart-products.js';
 import Button from '../components/Buttons/Button.jsx';
-import { formatPrice } from '../utils/formatPrice.js';
+import { formatPrice } from '../components/utils/formatPrice.js';
 import { useNavigate } from 'react-router-dom';
 
 export default function CartPage() {

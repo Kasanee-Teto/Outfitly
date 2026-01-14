@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { products } from '../data/products';
-import ProductCard from '../components/ProductCard';
+import ProductCard from './ProductCard';
 import './styles/SearchResultsPage.css';
 
 function filterProducts(list, term, category) {
