@@ -6,8 +6,12 @@ import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
 import FAQPage from './pages/FAQPage';
-import SearchResultsPage from './components/SearchResultsPage';
-import ProductDetailPage from './components/ProductDetailPage';
+import BlogPage from './pages/BlogPage';
+import Post1 from './pages/Post1';
+import Post2 from './pages/Post2';
+import Post3 from './pages/Post3';
+import SearchResultsPage from './pages/SearchResultsPage';
+import ProductDetailPage from './pages/ProductDetailPage';
 import NotFoundPage from './pages/NotFoundPage';
 import './App.css';
 import CartPage from './pages/CartPage';
@@ -25,6 +29,10 @@ function App() {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/faq" element={<FAQPage />} />
+          <Route path="/blog" element={<BlogPage />} />
+          <Route path='/post/1' element={<Post1 />} />
+          <Route path='/post/2' element={<Post2 />} />
+          <Route path='/post/3' element={<Post3 />} />
           <Route path="/search" element={<SearchResultsPage />} />
           <Route path="/product/:id" element={<ProductDetailPage />} />
           <Route path="/cart" element={<CartPage />} />

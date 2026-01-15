@@ -1,6 +1,6 @@
 import React, { useMemo, useState, useEffect } from 'react';
 import { NavLink, useNavigate, useLocation } from 'react-router-dom';
-import './styles/Header.css';
+import './Header.css';
 import { categories as categoryList } from '../data/products';
 import { useCurrency } from '../context/CurrencyContext';
 
@@ -120,9 +120,9 @@ function Header() {
           <NavLink to="/faq" onClick={handleNavItemClick}>
             FAQ
           </NavLink>
-          <a href="*" aria-label="Blog" onClick={handleNavItemClick}>
+          <NavLink to="/blog" onClick={handleNavItemClick}>
             Blog
-          </a>
+          </NavLink>
           <a href="*" id="loginButton" onClick={handleNavItemClick}>
             Login
           </a>
