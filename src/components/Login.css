@@ -1,0 +1,50 @@
+.login-wrapper { 
+    background-color: gray; 
+    height: 100vh; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    font-family: 'Nunito', sans-serif; 
+}
+.judul-brand { 
+    color: #0072ff; 
+    font-size: 50px; 
+    font-weight: bold; 
+    text-shadow: 4px 4px 4px black; 
+    margin-bottom: 20px; 
+}
+.login-card {
+    background-color: white; 
+    border: 3px solid black; 
+    padding: 60px; 
+    width: 600px; 
+}
+.blue-label { 
+    color: #0072ff; 
+    font-size: 30px; 
+    font-weight: bold; 
+}
+.input-line input { 
+    border: none;
+    border-bottom: 2px solid black; 
+    width: 100%; 
+    font-size: 20px; 
+    margin-bottom: 30px; 
+    outline: none; 
+}
+.btn-masuk { 
+    cursor: pointer; 
+    padding: 5px 15px; 
+    margin-bottom: 20px; 
+    font-size: 18px; 
+}
+.footer-text { 
+    color: #0072ff; 
+    font-size: 20px; 
+}
+.bold-link { 
+    font-weight: bold; 
+    color: #0072ff; 
+    text-decoration: underline; 
+}

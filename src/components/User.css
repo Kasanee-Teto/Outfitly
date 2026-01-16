@@ -1,0 +1,75 @@
+.user-bg { 
+    background-color: #ADD8E6; 
+    min-height: 100vh; 
+    padding: 40px; 
+    font-family: 'Nunito', sans-serif; 
+}
+
+.profile-box { 
+    background-color: white; 
+    border: 2px solid #0072ff; 
+    border-radius: 15px; 
+    padding: 30px; 
+    margin-bottom: 40px; 
+}
+
+.title-black { 
+    font-size: 35px; 
+    font-weight: bold; 
+    margin-bottom: 25px; 
+}
+
+/* Mengubah tabel agar menyusun ke bawah */
+.user-table {
+    width: 100%;
+}
+
+.user-table tr {
+    display: flex;
+    flex-direction: column; /* Ini kunci agar label dan input menyusun ke bawah */
+    margin-bottom: 20px;
+}
+
+.user-table td {
+    padding: 5px 0;
+    font-weight: bold;
+    color: #333;
+}
+
+.user-table input { 
+    border: none; 
+    border-bottom: 1.5px solid #ccc; /* Memberi garis bawah agar terlihat kolom inputnya */
+    outline: none; 
+    width: 100%; 
+    font-size: 18px; 
+    padding: 8px 0;
+}
+
+.user-table input:focus {
+    border-bottom: 2px solid #0072ff;
+}
+
+.title-blue { 
+    color: #0072ff; 
+    font-size: 35px; 
+    margin-bottom: 20px; 
+}
+
+.menu-item { 
+    background-color: white; 
+    border: 2px solid #0072ff; 
+    border-radius: 10px; 
+    margin-bottom: 15px; 
+    padding: 15px 25px; 
+    display: flex; 
+    justify-content: space-between; 
+    color: #0072ff; 
+    font-weight: bold; 
+    font-size: 20px; 
+    cursor: pointer; 
+}
+
+.menu-item:hover { 
+    background-color: #0072ff; 
+    color: white; 
+}
