@@ -1,13 +1,12 @@
 import React, { Fragment } from 'react';
 import { cartProducts } from '../data/cart-products.js';
 import Button from '../components/Buttons/Button.jsx';
-import Counter from '../components/Counters/Counter.jsx';
-import { formatPrice } from '../components/utils/formatPrice.js';
+import CartItem from '../components/CartItems/CartItem.jsx';
 import { useNavigate } from 'react-router-dom';
 
 export default function CartPage() {
 	const navigate = useNavigate();
-	
+
 	const removeItem = (e) => {
 		e.target.closest('tr').remove()
 	}
@@ -18,41 +17,40 @@ export default function CartPage() {
 
 	return (
 		<Fragment>
-			<h2>Shopping Cart</h2>
-			<div className="row">
+			<div className="row" style={{
+				padding: '18px',
+			}}>
 				<div className="col-12 col-lg-8">
-					<div className="table-responsive bootstrap-css">
-						<table className="table align-middle">
-							<thead className="table-light">
-								<tr>
-									<th>Product</th>
-									<th>Price</th>
-									<th>Quantity</th>
-									<th>Subtotal</th>
-									<th></th>
-								</tr>
-							</thead>
-							<tbody>
-								{cartProducts.map((product) => (
-									<tr>
-										<td>
-											<div className="d-flex align-items-center">
-												<img src={product.image} className="rounded me-3" style={{ width: '50px', height: '50px' }} alt={product.name} />
-												<span>{product.name}</span>
-											</div>
-										</td>
-										<td>{formatPrice(product.priceIdr, 'IDR')}</td>
-										{/* <td><input type="number" value={product.qty} className="form-control" style={{ width: '80px' }} /></td> */}
-										<td><Counter></Counter></td>
-										<td>{formatPrice(product.priceIdr * product.qty, 'IDR')}</td>
-										<td><Button text='Remove' onClick={removeItem}/></td>
-									</tr>
-								))}
-							</tbody>
-						</table>
+					<div className="cart-card" style={{
+						backgroundColor: '#fff',
+						padding: '18px',
+						borderRadius: '12px',
+						boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)',
+					}}>
+						<h5>Shopping Cart</h5>
+						<div style={{
+							display: 'flex',
+							flexDirection: 'column',
+							gap: '8px',
+						}}>
+						{cartProducts.map((product) => (
+							CartItem({
+								image: product.image,
+								name: product.name,
+								description: product.description,
+								price: product.priceIdr,
+								qty: product.qty,
+							})
+						))}
+						</div>
 					</div>
 				</div>
-				<div className="col-12 col-lg-4 d-flex align-items-center justify-content-center">
+				<div className="col-12 col-lg-4" style={{
+						backgroundColor: '#fff',
+						padding: '18px',
+						borderRadius: '12px',
+						boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)',
+					}}>
 					<div className="card w-100">
 						<div className="card-body">
 							<div id="cart-summary" className="text-center">
@@ -81,7 +79,7 @@ export default function CartPage() {
 								<span>Total</span>
 								<span>Rp. 401.250</span>
 							</div>
-							<Button text='Proceed to checkout' onClick={proceedToCheckout}/>
+							<Button text='Proceed to checkout' onClick={proceedToCheckout} />
 						</div>
 					</div>
 				</div>

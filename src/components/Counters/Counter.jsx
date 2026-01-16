@@ -3,8 +3,8 @@ import style from './Counter.module.css'
 import { FaMinus, FaPlus } from "react-icons/fa6";
 
 
-export default function Counter() {
-	const [count, setCount] = useState(0);
+export default function Counter({ value = 1 }) {
+	const [count, setCount] = useState(value);
 
 	const handleDecrement = () => {
 		if (count <= 0) return
