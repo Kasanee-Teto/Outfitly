@@ -120,9 +120,9 @@ function Header() {
           <NavLink to="/faq" onClick={handleNavItemClick}>
             FAQ
           </NavLink>
-          <a href="*" aria-label="Blog" onClick={handleNavItemClick}>
+          <NavLink to="/blog" onClick={handleNavItemClick}>
             Blog
-          </a>
+          </NavLink>
           <a href="*" id="loginButton" onClick={handleNavItemClick}>
             Login
           </a>
