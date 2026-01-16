@@ -1,13 +1,21 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
 import Button from '../components/Buttons/Button.jsx';
+import PaymentMethod from '../components/PaymentMethods/PaymentMethod.jsx';
 import { useNavigate } from 'react-router-dom';
+
+const paymentMethods = [
+	{ id: "credit-card", label: "Credit Card", img: "/assets/images/master-card-logo.png" },
+	{ id: "paypal", label: "Paypal", img: "/assets/images/paypal-logo.png" },
+	{ id: "bank-transfer", label: "Bank Transfer", img: "/assets/images/bank-transfer-logo.png" },
+]
 
 export default function CheckoutPage() {
 	const navigate = useNavigate();
-	
+	const [paymentMethod, setPaymentMethod] = useState("gopay");
+
 	const submitForm = (e) => {
 		e.preventDefault();
-		
+
 		navigate('/payment-confirmation');
 	}
 
@@ -39,12 +47,21 @@ export default function CheckoutPage() {
 								<option>Express (1 - 2 days)</option>
 							</select>
 						</div>
-						<div className="col-md-6">
+						<div className="col-12">
 							<label className="form-label">Payment Method</label>
-							<select className="form-select">
-								<option>Credit Card</option>
-								<option>PayPal</option>
-							</select>
+							<div className="d-flex" style={{
+								gap: '1rem'
+							}}>
+								{paymentMethods.map((m) => (
+									<PaymentMethod
+									key={m.id}
+									image={m.img}
+									label={m.label}
+									selected={paymentMethod === m.id}
+									onClick={() => setPaymentMethod(m.id)}
+									/>
+								))}
+							</div>
 						</div>
 						<div className="col-12 text-end mt-4">
 							<Button text='Place Order' onClick={submitForm}></Button>
