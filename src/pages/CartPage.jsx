@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import { cartProducts } from '../data/cart-products.js';
 import Button from '../components/Buttons/Button.jsx';
+import Counter from '../components/Counters/Counter.jsx';
 import { formatPrice } from '../components/utils/formatPrice.js';
 import { useNavigate } from 'react-router-dom';
 
@@ -36,12 +37,13 @@ export default function CartPage() {
 									<tr>
 										<td>
 											<div className="d-flex align-items-center">
-												<img src={product.image} className="rounded me-3" style={{ width: '50px', height: '50px' }} />
+												<img src={product.image} className="rounded me-3" style={{ width: '50px', height: '50px' }} alt={product.name} />
 												<span>{product.name}</span>
 											</div>
 										</td>
 										<td>{formatPrice(product.priceIdr, 'IDR')}</td>
-										<td><input type="number" value={product.qty} className="form-control" style={{ width: '80px' }} /></td>
+										{/* <td><input type="number" value={product.qty} className="form-control" style={{ width: '80px' }} /></td> */}
+										<td><Counter></Counter></td>
 										<td>{formatPrice(product.priceIdr * product.qty, 'IDR')}</td>
 										<td><Button text='Remove' onClick={removeItem}/></td>
 									</tr>
