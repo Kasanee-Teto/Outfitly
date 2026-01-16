@@ -1,5 +1,4 @@
 import React, {useState} from "react";
-import { NavLink } from "react-router-dom";
 import CommentSection from "../components/comment/Comment.jsx";
 import ShareButton from "../components/sharelink/ShareLink.jsx";
 import BlogList from "../components/SearchPosts/BlogList.jsx";

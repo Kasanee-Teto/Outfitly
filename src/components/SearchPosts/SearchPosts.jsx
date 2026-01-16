@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import SearchBar from "./SearchBar";
 
 const SearchPosts = ({ posts, onFilter }) => {
-  const [query, setQuery] = useState("");
+  const [_query, setQuery] = useState("");
 
   const handleSearch = (value) => {
     setQuery(value);
