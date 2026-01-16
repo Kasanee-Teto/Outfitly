@@ -182,7 +182,7 @@ function Post3() {
                                     </div>
                                     <div className="col-md-6 mb-4">
                                         <div className="card h-100">
-                                            <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80"/>
+                                            <img alt="related-article-2" src="https://images.unsplash.com/photo-1509631179647-0177331693ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80"/>
                                                 <div className="card-body">
                                                     <h5 className="card-title">Cara Mix and Match Outfit untuk Tampil Stylish Setiap
                                                         Hari</h5>

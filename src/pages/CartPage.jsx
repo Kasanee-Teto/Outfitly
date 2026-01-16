@@ -36,7 +36,7 @@ export default function CartPage() {
 									<tr>
 										<td>
 											<div className="d-flex align-items-center">
-												<img src={product.image} className="rounded me-3" style={{ width: '50px', height: '50px' }} />
+												<img alt='' src={product.image} className="rounded me-3" style={{ width: '50px', height: '50px' }} />
 												<span>{product.name}</span>
 											</div>
 										</td>
