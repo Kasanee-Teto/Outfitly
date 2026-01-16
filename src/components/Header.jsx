@@ -123,9 +123,12 @@ function Header() {
           <NavLink to="/blog" onClick={handleNavItemClick}>
             Blog
           </NavLink>
-          <a href="*" id="loginButton" onClick={handleNavItemClick}>
+          <NavLink id='loginButton' to="/login" onClick={handleNavItemClick}>
             Login
-          </a>
+          </NavLink>
+          <NavLink to="/user" onClick={handleNavItemClick}>
+            Profile
+          </NavLink>
           <NavLink to="/cart" onClick={handleNavItemClick}>
             Cart
           </NavLink>
