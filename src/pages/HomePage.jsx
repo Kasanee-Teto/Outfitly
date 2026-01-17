@@ -2,6 +2,8 @@ import React, { useMemo } from 'react';
 import ProductCard from '../components/ProductCard';
 import { products } from '../data/products';
 import './styles/HomePage.css';
+import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function shuffle(array) {
   const copy = [...array];
@@ -21,9 +23,9 @@ function HomePage() {
         <div className="hero-content container">
           <h2>Express Your Unique Style</h2>
           <p>Discover curated fashion from Goth to Vintage, Cosplay to Streetwear</p>
-          <a href="*" className="btn btn-outfitly">
+          <NavLink to="/search" className="btn btn-outfitly">
             Explore Collections
-          </a>
+          </NavLink>
         </div>
       </section>
 
@@ -34,6 +36,7 @@ function HomePage() {
             {['Goth', 'Cosplay', 'Vintage', 'Streetwear'].map((category) => {
               const sample = products.find((p) => p.category === category);
               return (
+                <Link to={`/search?category=${category}`} key={category}>
                 <div className="box category-card" key={category}>
                   <img
                     src={sample?.image}
@@ -45,6 +48,7 @@ function HomePage() {
                   />
                   <h4>{category}</h4>
                 </div>
+                </Link>
               );
             })}
           </div>

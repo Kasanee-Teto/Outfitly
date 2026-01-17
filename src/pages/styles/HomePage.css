@@ -62,6 +62,16 @@
   z-index: 1;
 }
 
+/* remove-link-decoration */
+.home-page .categories a {
+  text-decoration: none;
+  color: inherit;
+}
+.home-page .categories a:hover,
+.home-page .categories a:focus {
+  text-decoration: none;
+}
+
 .home-page .trending .product-card {
   border-top: 3px solid #0072ff;
 }
