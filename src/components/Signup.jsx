@@ -74,7 +74,7 @@ const Signup = () => {
                             <tr><td><button type="submit" className="btn-daftar">Daftar Sekarang</button></td></tr>
                             <tr>
                                 <td>
-                                    <Link to="/" className="link-back">Sudah punya akun? Login disini</Link>
+                                    <Link to="/login" className="link-back">Sudah punya akun? Login disini</Link>
                                 </td>
                             </tr>
                         </tbody>
