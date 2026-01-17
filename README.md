@@ -5,13 +5,13 @@
 </div>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/React-19-61DAFB. svg?logo=react&logoColor=white" alt="React">
-  <img src="https://img.shields.io/badge/React%20Router-v7-CA4245.svg?logo=reactrouter&logoColor=white" alt="React Router">
+  <img src="https://img.shields.io/badge/React-18-61DAFB.svg?logo=react&logoColor=white" alt="React">
+  <img src="https://img.shields.io/badge/React%20Router-v6-CA4245.svg?logo=reactrouter&logoColor=white" alt="React Router">
   <img src="https://img.shields.io/badge/JavaScript-ES6+-F7DF1E.svg?logo=javascript&logoColor=black" alt="JavaScript">
-  <img src="https://img.shields.io/badge/Styling-CSS3-1572B6.svg? logo=css3&logoColor=white" alt="CSS">
+  <img src="https://img.shields.io/badge/Styling-CSS3-1572B6.svg?logo=css3&logoColor=white" alt="CSS">
   <img src="https://img.shields.io/badge/Hosting-Vercel-000000.svg?logo=vercel&logoColor=white" alt="Vercel">
   <img src="https://img.shields.io/badge/License-MIT-green.svg" alt="MIT">
-  <img src ="https://img.shields.io/badge/-Bootstrap-563D7C? style=flat-square&logo=bootstrap" alt="Bootstrap">
+  <img src ="https://img.shields.io/badge/-Bootstrap-563D7C?style=flat-square&logo=bootstrap" alt="Bootstrap">
 </p>
 
 <div align="center">
@@ -47,14 +47,18 @@ Live demo: **[Outfitly](https://outfitly-teal.vercel.app/)**
 
 ## 🖼️ Screenshots
 
-| | |
-| : ---: | :---: |
 | **Home Page** | **Product Catalog** |
-| ![Home Page](./docs/Home.png) | ![Product Catalog](./docs/Catalog.png)|
+| :---: | :---: |
+| ![Home Page](./docs/Home.png) | ![Product Catalog](./docs/Catalog.png) |
+
 | **Product Details** | **Shopping Cart** |
-| ![Product Details](./docs/Product. png) | ![Shopping Cart](./docs/Cart.png)|
-| **Checkout Page** |
-| ![Checkout Page](./docs/Checkout.png) |
+| :---: | :---: |
+| ![Product Details](./docs/Product.png) | ![Shopping Cart](./docs/Cart.png) |
+
+| **Checkout Page** |  |
+| :---: | :---: |
+| ![Checkout Page](./docs/Checkout.png) |  |
+
 
 ---
 
