@@ -49,10 +49,10 @@ function AboutPage() {
           <div className="member">
             <img
               src="../assets/images/person1.jpg"
-              alt="Sarah Lee — Founder & CEO"
+              alt="Adachi Rei — Founder & CEO"
             />
             <p>
-              <strong>Sarah Lee</strong>
+              <strong>Adachi Rei</strong>
               <br />
               Founder &amp; CEO
             </p>
@@ -60,10 +60,10 @@ function AboutPage() {
           <div className="member">
             <img
               src="../assets/images/person2.jpg"
-              alt="Michael Tan — Marketing Head"
+              alt="Hatsune Miku — Marketing Head"
             />
             <p>
-              <strong>Michael Tan</strong>
+              <strong>Hatsune Miku</strong>
               <br />
               Marketing Head
             </p>
@@ -71,10 +71,10 @@ function AboutPage() {
           <div className="member">
             <img
               src="../assets/images/person3.jpg"
-              alt="Andre Wubert — Designer"
+              alt="Utane Uta ( Defoko ) — Designer"
             />
             <p>
-              <strong>Andre Wubert</strong>
+              <strong>Utane Uta ( Defoko )</strong>
               <br />
               Designer
             </p>

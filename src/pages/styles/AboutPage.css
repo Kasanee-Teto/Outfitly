@@ -74,7 +74,9 @@
 
 .about-page .member img {
   width: 100%;
-  height: auto;
+  max-width: 220px;      /* optional: limit width inside the card */
+  height: 340px;         /* choose a height that fits all characters well */
+  object-fit: cover;     /* crop to fill area while keeping proportions */
   border-radius: 10px;
   display: block;
   margin-bottom: 8px;
