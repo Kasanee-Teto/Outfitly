@@ -1,0 +1,26 @@
+.signup-wrapper { 
+    background-color: gray;
+    height: 100vh;
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    font-family: 'Nunito', sans-serif; 
+}
+.signup-card { 
+    background-color: white; 
+    border: 3px solid black; 
+    border-radius: 20px; 
+    padding: 40px; 
+    width: 500px; 
+}
+.btn-daftar { 
+    cursor: pointer; 
+    padding: 5px 20px; 
+    font-size: 18px; 
+    margin: 10px 0; 
+}
+.link-back { 
+    color: #0072ff; 
+    text-decoration: none; 
+    font-weight: bold; }
